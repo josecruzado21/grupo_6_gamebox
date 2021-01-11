@@ -36,3 +36,5 @@ Los sitios que se tomaron de referencia son e-commerce de productos electrónico
 ### **Jose Alonso Cruzado**
 
 ### **Jaime Rivera**
+Ingeniero de sistemas Colombiano de 35 años, llevo trabajando como desarrollador unos 7 años siempre enfocado hacia el backend en lenguajes como C# y Java, me gusta aprender nuevas tecnologias y formas
+de hacer las cosas. Apasionado por el fútbol, la familia y los videojuegos, me gusta ir a cine y ver series de todo tipo.
