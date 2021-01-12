@@ -32,6 +32,7 @@ Los sitios que se tomaron de referencia son e-commerce de productos electrónico
 ## **Integrantes del equipo**
 
 ### **Juan Camilo Castañeda**
+Diseñador de producto, Colombiano. Tengo 28 años, trabajo como diseñador UI/UX y maquetador desde hace 5 años. He querido aprender Js desde hace tiempo. Me encantan los videojuegos, leer novelas y viajar.
 
 ### **Jose Alonso Cruzado**
 
