@@ -35,6 +35,7 @@ Los sitios que se tomaron de referencia son e-commerce de productos electrónico
 Diseñador de producto, Colombiano. Tengo 28 años, trabajo como diseñador UI/UX y maquetador desde hace 5 años. He querido aprender Js desde hace tiempo. Me encantan los videojuegos, leer novelas y viajar.
 
 ### **Jose Alonso Cruzado**
+Economista y Data Scientist Peruano de 23 años. Trabajo en un fondo de inversiones como analista de datos y desarrollo de negocios. Me gusta mucho la programación, hacer deportes y leer.
 
 ### **Jaime Rivera**
 Ingeniero de sistemas Colombiano de 35 años, llevo trabajando como desarrollador unos 7 años siempre enfocado hacia el backend en lenguajes como C# y Java, me gusta aprender nuevas tecnologias y formas
