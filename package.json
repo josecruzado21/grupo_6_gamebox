@@ -1,0 +1,25 @@
+{
+  "name": "grupo_6_gamebox",
+  "version": "1.0.0",
+  "description": "GameBox es un e-commerce especializado en la venta de productos de *gaming*. La oferta de este comercio se centrará en productos electrónicos y no electrónicos que aquellos interesados en los videojuegos necesitan para practicar este pasatiempo.",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josecruzado21/grupo_6_gamebox.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josecruzado21/grupo_6_gamebox/issues"
+  },
+  "homepage": "https://github.com/josecruzado21/grupo_6_gamebox#readme"
+}
