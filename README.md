@@ -40,3 +40,7 @@ Economista y Data Scientist Peruano de 23 años. Trabajo en un fondo de inversio
 ### **Jaime Rivera**
 Ingeniero de sistemas Colombiano de 35 años, llevo trabajando como desarrollador unos 7 años siempre enfocado hacia el backend en lenguajes como C# y Java, me gusta aprender nuevas tecnologias y formas
 de hacer las cosas. Apasionado por el fútbol, la familia y los videojuegos, me gusta ir a cine y ver series de todo tipo.
+
+## Clubhouse
+Estamos utilizando CLubhouse como board para las historias y segumiento dle proyecto. Pueden acceder a la invitación en el siguiente enlace:
+https://app.clubhouse.io/invite-link/600f96ea-4f0c-4d5e-b54b-05fb907342c6
