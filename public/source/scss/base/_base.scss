@@ -1,3 +1,34 @@
+//Breakpoints
+$breakpoints: (
+  'phone': (min-width: 480),
+  'tablet': (min-width: 768px),
+  'desktop': (min-width: 1024px),
+  'large-screen': (min-width: 1200px),
+);
+
+/// Gestor Responsive
+/// @access public
+/// @param {String} $breakpoint - Punto de ruptura
+/// @requires $breakpoints
+@mixin respond-to($breakpoint) {
+    $raw-query: map-get($breakpoints, $breakpoint);
+  
+    @if $raw-query {
+      $query: if(
+        type-of($raw-query) == 'string',
+        unquote($raw-query),
+        inspect($raw-query)
+      );
+  
+      @media #{$query} {
+        @content;
+      }
+    } @else {
+      @error 'No se ha encontrado un valor para `#{$breakpoint}`. '
+           + 'Por favor, asegúrate que está definido en el mapa `$breakpoints`.';
+    }
+  }
+
 // Aqui van los estilos básicos de arranque
 
 // Colores
