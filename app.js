@@ -8,9 +8,15 @@ app.listen(3030, ()=>{
     console.log("servidor corriendo");
 })
 
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+
+// app.get('/', (req,res) => {
+//     res.sendFile(path.resolve(__dirname, './views/index.html'));
+// })
 
 app.get('/', (req,res) => {
-    res.sendFile(path.resolve(__dirname, './views/index.html'));
+    res.render('pages/index');
 })
 
 app.get('/registro', (req,res) => {
