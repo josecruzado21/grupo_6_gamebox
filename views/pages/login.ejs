@@ -18,11 +18,33 @@
     </header>
    
     <section class="login">
- 
-       
+        <div class="title-login">
+             Inicia Sesión
+        </div>
+        <div class="welcome-login">
+                ¡Bienvenido de nuevo! Ingresa con tu correo electrónico y contraseña
+        </div>
+        
+        <div class="form-login">
+            <form action="" method="POST">
+                <input class="input-field" type="text" name="email" placeholder="Correo electrónico">
+                <input class="input-field" type="text" name="password" placeholder="Contraseña"><i class="far fa-eye icon-eye"></i>
+                <span class="error"></span>
+                <a href="#">Recuperar contraseña</a>
+                <label><input type="checkbox" name="sesion" id="sesion" value="sesion"> Mantener mi sesión iniciada</label><br>
+                <button class="btn-get-in">Ingresa ahora</button>
+            </form> 
+        </div>
+
+        <div class="no-account">
+            ¿No tienes una cuenta? <a href="/registro">Regístrate</a>
+        </div>
     </section>
 
-   
+    <section class="login-img"> 
+
+    </section>
+
     <footer>
         <%- include('../partials/footer') %>
     </footer>

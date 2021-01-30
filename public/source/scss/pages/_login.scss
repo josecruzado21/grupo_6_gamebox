@@ -1,0 +1,103 @@
+.login{
+    padding: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+.title-login{
+    color: $blue;
+    font-size: 40px;
+    font-family: Catamaran;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 42px;
+    margin-bottom: 15px;
+}
+
+.welcome-login{
+    color:$darkGrey;
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 15px;
+}
+
+.form-login{
+    
+    width: 80%;
+    form{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    i{
+        position: absolute;
+        top: 9px;
+        left: 84%;
+        @include respond-to('tablet') {
+            left: 90%;
+          }
+
+        @include respond-to('desktop') {
+            left: 93%;
+          }
+
+    }
+    a{
+        font-family: Mulish;
+        color:$lightBlue;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 23px;
+        margin-left: auto;
+        
+    }
+
+}
+
+.icon-eye{
+    padding: 10px; 
+    min-width: 40px;    
+}
+
+.input-field{
+    width: 100%;
+    height: 52px;
+    left: calc(50% - 100%/2);
+    top: calc(50% - 52px/2 - 40px);
+
+    background: #FFFFFF;
+    border: 1.5px solid $blue;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.btn-get-in{
+    color:#FFFFFF;
+    background: $red;
+    border-radius: 4px;
+    width: 100%;
+    height: 66px;
+    left: 88px;
+    top: 692px;
+    
+}
+
+.no-account{
+    margin-top: 40px;
+    margin-bottom: 30px;
+    a{
+        font-family: Mulish;
+        color:$lightBlue;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 23px;
+        
+    }
+}

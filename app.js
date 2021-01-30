@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path');
+const bodyParser = require("body-parser");
 const app = express();
 const publicPath = path.resolve(__dirname, './public');
 app.use('/static',express.static(publicPath));
@@ -10,6 +11,10 @@ app.listen(3030, ()=>{
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
+
+
+app.use(bodyParser.urlencoded({extended: true}));
+
 
 // app.get('/', (req,res) => {
 //     res.sendFile(path.resolve(__dirname, './views/index.html'));
