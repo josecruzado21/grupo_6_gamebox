@@ -2,29 +2,20 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
 const autoprefixer = require('gulp-autoprefixer');
-const sourcemaps = require('gulp-sourcemaps');
-const notify = require('gulp-notify')
+const sourcemaps = require('gulp-sourcemaps')
 
-// Compile scss into css
 function style() {
     return gulp.src('./public/source/scss/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
-            outputStyle : 'compressed',
-            errLogToConsole: false,
-        }).on('error', function(err){
-            return notify().write(err);
-        }))
+            outputStyle : 'compressed'
+        }).on('error', sass.logError))
         .pipe(autoprefixer({
             cascade: false
         }))
-        .pipe(sourcemaps.write('./public/css'))
-        .pipe(gulp.dest('./public/css'))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('public/css/'))
         .pipe(browserSync.stream())
-        .pipe(notify({ 
-            title: 'Sass',
-            message: 'Estilos compilados' 
-        }))
 }
 
 function watch() {
@@ -34,7 +25,7 @@ function watch() {
         ui: false,
         ignore: 'node_modules',
         injectChanges: false,
-        browser: 'firefox developer edition'
+        browser: 'google chrome'
     });
     gulp.watch('./public/source/scss/**/*.scss', style);
     gulp.watch('./views/**/*.html').on('change', browserSync.reload);
