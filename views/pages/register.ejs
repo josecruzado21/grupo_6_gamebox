@@ -13,45 +13,64 @@
     <title>Registro</title>
 </head>
 <body>
-    <header>
-        <div>hola</div>
-    </header>
 
     <section class= "register">
 
 
         <article class="register-1">
-            <div class="title-register">
-                 Regístrate
-            </div>
-            <div class="welcome-register">
-                Recibirás un correo electrónico para completar la configuración en unos segundos
-            </div>
-            
+            <a href="/" target="_self" class="logoBrand">
+                <img src="static/images/logoColor.svg" alt="Ir a gamebox home">
+            </a>
+
+            <div class="formWrapper">
+
+                <div class="register-introWrapper">
+                    <h1 class="small-title-register">
+                        Regístrate
+                    </h1>
+                    <p class="register-login">
+                        Recibirás un correo electrónico para completar la configuración en unos segundos
+                    </p>
+                </div>
+
             <div class="form-register">
                 <form action="" method="POST">
-                    <input class="input-field" type="text" name="name" placeholder="Bruce Wayne">
-                    <input class="input-field" type="text" name="email" placeholder="batimail@g">
-                    <input class="input-field" type="password" name="password" placeholder="Contraseña"><i class="far fa-eye icon-eye"></i>
-                    <span class="error"></span>
-                    <p>
-                        Tu contraseña debe incluir:
-                    </p>
+             
+                    <div class="input-wrapper">
+                        <input type="text" name="name" class="input" placeholder=" " id="name">
+                        <label for="name" class="label">Nombre</label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" name="email" class="input" placeholder=" " id="email">
+                        <label for="email" class="label">Correo electrónico</label>
+                    </div>
 
-                    
-                    <label><input type="checkbox" name="terms" id="terms" value="terms"> Acepto <a href="#">términos y condiciones</a> del servicio</label><br>
-                    
-                    <button class="btn-create-account">Crear cuenta</button>
+                    <div class="input-wrapper">
+                        <input class="input" type="password" name="password" placeholder=" ">
+                        <label for="password" class="label" id="label">Password</label>
+                        <span class="icon"></span>
+                    </div>
+
+
+                    <div class="checkboxWrapper">
+                        <input type="checkbox" name="terms" id="checkboxTerms" class="checkbox">
+                        <label for="checkboxTerms" class="checkboxLabel">Acepto <a class="linkNormal" href="#"> términos y condiciones </a> del servicio
+                        </label>
+                    </div>
+
+                    <button class="btn-get-in">Crear cuenta</button>
+
                 </form> 
             </div>
-    
-            <div class="no-account">
-                ¿Ya tienes cuenta? <a href="/login">Inicia sesión</a>
+
             </div>
+    
+            <p class="already-account">
+                ¿Ya tienes cuenta? <a class="linkNormal" href="/login">Inicia sesión</a>
+            </p>
         </article>
     
         <article class="register-2"> 
-            <img class="register-img"  src="static\images\ac-valhalla.png" alt="assassins creed valhalla">
             <div class="register-img-text">        
                 Únete a nuestra comunidad y accede a descuentos exclusivos
             </div>
@@ -60,74 +79,7 @@
         </section>
    
    
-    <footer>
-        
-    <section class="contact">
-   <article>
-     <h2>
-         CONTACTO GAMEBOX
-     </h2>
-     <h4>
-         LUNES A DOMINGO DE 9AM A 7PM
-     </h4>
- </article>
-  <article>
-     <h3>
-         <i class="fas fa-phone-volume"></i>  +5X-XXXXXXX
-     </h3>
-     <h3>
-         <i class="fas fa-envelope"></i>   xxxx@xxxx.com
-     </h3>
- </article>
-    </section>
-    
- <section class="suscribe">
-     <div class="social-icons">
-         <i class="fab fa-facebook-f"></i>
-         <i class="fab fa-instagram"></i>
-         <i class="fab fa-twitter"></i>
-     </div>
-     <div>
-         Suscríbete a nuestro sitio
-     </div>
-     <div>
-         <input type="text"></input>
-         <button class=btn-suscribe>SUSCRIBIRSE</button>
-     </div>
-    </section>
-
-    <section class="text-footer">
-     <article class="who">
-         <h3>Quienes somos</h3>
-         <p>
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-             Molestiae sapiente quam eligendi ea quibusdam labore similique 
-             dolores cum laudantium ab, odit ipsam veniam illo reprehenderit 
-             enim excepturi rem vitae. Vero?
-         </p>
-     </article>
-     <article class="client-service">
-         <h3>Servicio al cliente</h3>
-         <p>
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-             Molestiae sapiente quam eligendi ea quibusdam labore similique 
-             dolores cum laudantium ab, odit ipsam veniam illo reprehenderit 
-             enim excepturi rem vitae. Vero?
-         </p>
-     </article>
-     <article class="help">
-         <h3>Ayuda</h3>
-         <p>
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-             Molestiae sapiente quam eligendi ea quibusdam labore similique 
-             dolores cum laudantium ab, odit ipsam veniam illo reprehenderit 
-             enim excepturi rem vitae. Vero? fdsfds gfd dsds
-         </p>
-     </article>
-    </section>
-
-
-    </footer>
+   
     
 </body>
 </html>
