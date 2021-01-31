@@ -1,9 +1,9 @@
 .header{
-    background-color:$color-blue;
+    background-color:$blue;
     height:29vh;
     width: 100%;
     padding-top: 25px;
-    border-bottom: $color-red 3px solid;
+    border-bottom: $red 3px solid;
     padding-bottom:20px;
     position:relative;
     padding-bottom: 0px;
@@ -124,7 +124,7 @@
 
 //estilos al burger menu que solo se verá en la versión de teléfono (tiene fondo rojo)
 .burger-menu .fas{
-    background-color: $color-red;
+    background-color: $red;
     color: white;
     display: block;
     margin:auto;
@@ -150,7 +150,7 @@
     text-align: center;
     display:none;
     padding-right: 10%;
-    background-color:$color-blue-second;
+    background-color:$darkBlue;
     position:absolute;
     bottom:0px;
     align-items: center;
@@ -165,7 +165,7 @@
 .menu-options .category .burger-menu-category{
     display: flex;
     flex-direction: row;
-    background-color: $color-red;
+    background-color: $red;
     align-items: center;
     width: 45%;
     justify-content: space-between;
@@ -175,7 +175,7 @@
 .menu-options .category{
     display: flex;
     flex-direction: row;
-    background-color: $color-red;
+    background-color: $red;
     width: 27%;
     height: 100%;
     text-align: center;
