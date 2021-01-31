@@ -1,120 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/main.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <title>Inicia sesion</title>
-</head>
-
-<body>
-    <header>
-        <div>hola</div>
-    </header>
-   <section class= "login">
+<%- include('../partials/header.ejs') %>
+    <section class="login">
 
 
-    <article class="login-1">
-        <div class="title-login">
-             Inicia Sesión
-        </div>
-        <div class="welcome-login">
+        <article class="login-1">
+            <div class="title-login">
+                Inicia Sesión
+            </div>
+            <div class="welcome-login">
                 ¡Bienvenido de nuevo! Ingresa con tu correo electrónico y contraseña
-        </div>
-        
-        <div class="form-login">
-            <form action="" method="POST">
-                <input class="input-field" type="text" name="email" placeholder="Correo electrónico">
-                <input class="input-field" type="text" name="password" placeholder="Contraseña"><i class="far fa-eye icon-eye"></i>
-                <span class="error"></span>
-                <a href="#">Recuperar contraseña</a>
-                <label><input type="checkbox" name="sesion" id="sesion" value="sesion"> Mantener mi sesión iniciada</label><br>
-                <button class="btn-get-in">Ingresa ahora</button>
-            </form> 
-        </div>
+            </div>
 
-        <div class="no-account">
-            ¿No tienes una cuenta? <a href="/registro">Regístrate</a>
-        </div>
-    </article>
+            <div class="form-login">
+                <form action="" method="POST">
+                    <input class="input-field" type="text" name="email" placeholder="Correo electrónico">
+                    <input class="input-field" type="password" name="password" placeholder="Contraseña"><i
+                        class="far fa-eye icon-eye"></i>
+                    <span class="error"></span>
+                    <a href="#">Recuperar contraseña</a>
+                    <label><input type="checkbox" name="sesion" id="sesion" value="sesion"> Mantener mi sesión
+                        iniciada</label><br>
+                    <button class="btn-get-in">Ingresa ahora</button>
+                </form>
+            </div>
 
-    <article class="login-2"> 
-        <img class="login-img"  src="static\images\last-of-us2.png" alt="assassins creed valhalla">
-        <div class="login-img-text">        
-            ¿Qué esperas para vivir tu próxima gran aventura?
-        </div>
-    </article>
+            <div class="no-account">
+                ¿No tienes una cuenta? <a href="/registro">Regístrate</a>
+            </div>
+        </article>
+
+        <article class="login-2">
+            <img class="login-img" src="static\images\last-of-us2.png" alt="last of us 2">
+            <div class="login-img-text">
+                ¿Qué esperas para vivir tu próxima gran aventura?
+            </div>
+        </article>
 
     </section>
 
     <footer>
-        
-    <section class="contact">
-   <article>
-     <h2>
-         CONTACTO GAMEBOX
-     </h2>
-     <h4>
-         LUNES A DOMINGO DE 9AM A 7PM
-     </h4>
- </article>
-  <article>
-     <h3>
-         <i class="fas fa-phone-volume"></i>  +5X-XXXXXXX
-     </h3>
-     <h3>
-         <i class="fas fa-envelope"></i>   xxxx@xxxx.com
-     </h3>
- </article>
-    </section>
-    
- <section class="suscribe">
-     <div class="social-icons">
-         <i class="fab fa-facebook-f"></i>
-         <i class="fab fa-instagram"></i>
-         <i class="fab fa-twitter"></i>
-     </div>
-     <div>
-         Suscríbete a nuestro sitio
-     </div>
-     <div>
-         <input type="text"></input>
-         <button class=btn-suscribe>SUSCRIBIRSE</button>
-     </div>
-    </section>
+        <section class="contact">
+            <article>
+                <h2>
+                    CONTACTO GAMEBOX
+                </h2>
+                <h4>
+                    LUNES A DOMINGO DE 9AM A 7PM
+                </h4>
+            </article>
+            <article>
+                <h3>
+                    <i class="fas fa-phone-volume"></i> +5X-XXXXXXX
+                </h3>
+                <h3>
+                    <i class="fas fa-envelope"></i> xxxx@xxxx.com
+                </h3>
+            </article>
+        </section>
 
-    <section class="text-footer">
-     <article class="who">
-         <h3>Quienes somos</h3>
-         <p>
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-             Molestiae sapiente quam eligendi ea quibusdam labore similique 
-             dolores cum laudantium ab, odit ipsam veniam illo reprehenderit 
-             enim excepturi rem vitae. Vero?
-         </p>
-     </article>
-     <article class="client-service">
-         <h3>Servicio al cliente</h3>
-         <p>
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-             Molestiae sapiente quam eligendi ea quibusdam labore similique 
-             dolores cum laudantium ab, odit ipsam veniam illo reprehenderit 
-             enim excepturi rem vitae. Vero?
-         </p>
-     </article>
-     <article class="help">
-         <h3>Ayuda</h3>
-         <p>
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-             Molestiae sapiente quam eligendi ea quibusdam labore similique 
-             dolores cum laudantium ab, odit ipsam veniam illo reprehenderit 
-             enim excepturi rem vitae. Vero? fdsfds gfd dsds
-         </p>
-     </article>
-    </section>
+        <section class="suscribe">
+            <div class="social-icons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+            <div>
+                Suscríbete a nuestro sitio
+            </div>
+            <div>
+                <input type="text"></input>
+                <button class=btn-suscribe>SUSCRIBIRSE</button>
+            </div>
+        </section>
+
+        <section class="text-footer">
+            <article class="who">
+                <h3>Quienes somos</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Molestiae sapiente quam eligendi ea quibusdam labore similique
+                    dolores cum laudantium ab, odit ipsam veniam illo reprehenderit
+                    enim excepturi rem vitae. Vero?
+                </p>
+            </article>
+            <article class="client-service">
+                <h3>Servicio al cliente</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Molestiae sapiente quam eligendi ea quibusdam labore similique
+                    dolores cum laudantium ab, odit ipsam veniam illo reprehenderit
+                    enim excepturi rem vitae. Vero?
+                </p>
+            </article>
+            <article class="help">
+                <h3>Ayuda</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Molestiae sapiente quam eligendi ea quibusdam labore similique
+                    dolores cum laudantium ab, odit ipsam veniam illo reprehenderit
+                    enim excepturi rem vitae. Vero? fdsfds gfd dsds
+                </p>
+            </article>
+        </section>
 
 
     </footer>
