@@ -16,9 +16,6 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-app.get('/', (req,res) => {
-    res.sendFile(path.resolve(__dirname, './views/index.html'));
-})
 
 app.get('/', (req,res) => {
     res.render('pages/index');
