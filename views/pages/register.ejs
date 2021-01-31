@@ -16,6 +16,48 @@
     <header>
         <%- include('../partials/header') %>
     </header>
+
+    <section class= "register">
+
+
+        <article class="register-1">
+            <div class="title-register">
+                 Regístrate
+            </div>
+            <div class="welcome-register">
+                Recibirás un correo electrónico para completar la configuración en unos segundos
+            </div>
+            
+            <div class="form-register">
+                <form action="" method="POST">
+                    <input class="input-field" type="text" name="name" placeholder="Bruce Wayne">
+                    <input class="input-field" type="text" name="email" placeholder="batimail@g">
+                    <input class="input-field" type="password" name="password" placeholder="Contraseña"><i class="far fa-eye icon-eye"></i>
+                    <span class="error"></span>
+                    <p>
+                        Tu contraseña debe incluir:
+                    </p>
+
+                    
+                    <label><input type="checkbox" name="terms" id="terms" value="terms"> Acepto <a href="#">términos y condiciones</a> del servicio</label><br>
+                    
+                    <button class="btn-create-account">Crear cuenta</button>
+                </form> 
+            </div>
+    
+            <div class="no-account">
+                ¿Ya tienes cuenta? <a href="/login">Inicia sesión</a>
+            </div>
+        </article>
+    
+        <article class="register-2"> 
+            <img class="register-img"  src="static\images\ac-valhalla.png" alt="assassins creed valhalla">
+            <div class="register-img-text">        
+                Únete a nuestra comunidad y accede a descuentos exclusivos
+            </div>
+        </article>
+    
+        </section>
    
    
     <footer>
