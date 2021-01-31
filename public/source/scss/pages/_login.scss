@@ -25,7 +25,7 @@
          }
          .login-img-text{
             position: absolute;
-            font-family: Catamaran;
+            font-family: $primary-font;
             font-style: normal;
             font-weight: 800;
             font-size: 48px;
@@ -53,7 +53,7 @@
 .title-login{
     color: $blue;
     font-size: 40px;
-    font-family: Catamaran;
+    font-family: $primary-font;
     font-style: normal;
     font-weight: bold;
     line-height: 42px;
@@ -62,7 +62,7 @@
 
 .welcome-login{
     color:$darkGrey;
-    font-family: Mulish;
+    font-family: $secondary-font;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -94,7 +94,7 @@
 
     }
     a{
-        font-family: Mulish;
+        font-family: $secondary-font;
         color:$lightBlue;
         font-style: normal;
         font-weight: 800;
@@ -141,7 +141,7 @@
     margin-top: 40px;
     margin-bottom: 30px;
     a{
-        font-family: Mulish;
+        font-family: $secondary-font;
         color:$lightBlue;
         font-style: normal;
         font-weight: 800;
