@@ -1,7 +1,53 @@
 .login{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+}
+
+.login-2{
+    display: none;
+
+    @include respond-to('desktop') {
+        width: 70%;
+        position: relative;
+        display: block;
+         .login-img{
+            position: absolute;
+            width: 100%;
+            /* left: 576px; */
+            top: 0px;
+            height: -webkit-fill-available;
+            object-fit: cover;
+           
+         }
+         .login-img-text{
+            position: absolute;
+            font-family: Catamaran;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 48px;
+            line-height: 56px;
+            color: $white;
+            bottom: 0%;
+         }
+
+      }
+}
+
+
+.login-1{
     padding: 20px;
     width: 80%;
     margin: auto;
+
+    @include respond-to('desktop') {
+        width: 40%;
+        margin: auto;
+        align-items: flex-start;
+    }
 }
 
 .title-login{
@@ -27,6 +73,7 @@
 .form-login{
     
     width: 80%;
+
     form{
         position: relative;
         display: flex;
@@ -42,7 +89,7 @@
           }
 
         @include respond-to('desktop') {
-            left: 93%;
+            left: 90%;
           }
 
     }
@@ -54,6 +101,7 @@
         font-size: 18px;
         line-height: 23px;
         margin-left: auto;
+        margin-bottom: 30px;
         
     }
 
@@ -70,7 +118,7 @@
     left: calc(50% - 100%/2);
     top: calc(50% - 52px/2 - 40px);
 
-    background: #FFFFFF;
+    background: $white;
     border: 1.5px solid $blue;
     box-sizing: border-box;
     border-radius: 4px;
@@ -78,13 +126,14 @@
 }
 
 .btn-get-in{
-    color:#FFFFFF;
+    color:$white;
     background: $red;
     border-radius: 4px;
     width: 100%;
     height: 66px;
     left: 88px;
     top: 692px;
+    margin-top: 20px;
     
 }
 
@@ -101,3 +150,4 @@
         
     }
 }
+
