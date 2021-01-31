@@ -2,14 +2,14 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
 const autoprefixer = require('gulp-autoprefixer');
-const sourcemaps = require('gulp-sourcemaps')
+const sourcemaps = require('gulp-sourcemaps');
 const ejs = require('gulp-ejs');
 
 function style() {
     return gulp.src('./public/source/scss/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
-            outputStyle : 'compressed'
+            outputStyle: 'compressed'
         }).on('error', sass.logError))
         .pipe(autoprefixer({
             cascade: false
@@ -17,6 +17,12 @@ function style() {
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('public/css/'))
         .pipe(browserSync.stream())
+}
+
+function ejsTemplates() {
+    return gulp.src('./views/**/*.ejs')//SHOULD GRAB ALL EJS PAGES 
+        .pipe(ejs({}, {}, { ext: '.html' })) //ADD EXTENSION OF .HTML
+        .pipe(gulp.dest('./views/')) //AND EXPORT THEM TO THE DIST FOLDER
 }
 
 function watch() {
@@ -35,13 +41,6 @@ function watch() {
 }
 
 
-
-    gulp.task('ejs', function(){
-        return gulp.src('./views/**/*.ejs')//SHOULD GRAB ALL EJS PAGES 
-         .pipe(ejs({},{}, {ext:'.html'})) //ADD EXTENSION OF .HTML
-         .pipe(gulp.dest('./dist')) //AND EXPORT THEM TO THE DIST FOLDER
-      });
-
-
 exports.style = style;
+exports.ejsTemplates = ejsTemplates;
 exports.watch = watch;
