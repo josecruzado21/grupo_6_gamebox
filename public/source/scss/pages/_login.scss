@@ -82,7 +82,8 @@
     }
     i{
         position: absolute;
-        top: 9px;
+        top: 70px;
+
         left: 84%;
         @include respond-to('tablet') {
             left: 90%;
