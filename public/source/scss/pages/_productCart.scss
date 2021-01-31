@@ -175,10 +175,35 @@
     background: $yellow;
     border-radius: 8px;
     width: 100%;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    
     img{
+        
         width: 100%;
         height: auto;
-        max-width: 100px;
-        margin-right: 10px;
+        max-width: 200px;
+        
+    }
+    .banner-txt-1{
+
+        font-family: Catamaran;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 40px;
+        line-height: 46px;
+        color: $white;
+        text-align: center;
+    }
+    .banner-txt-2{
+        font-family: Mulish;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;    
+        color: $darkGrey;
+
     }
 }
