@@ -4,6 +4,9 @@ const browserSync = require('browser-sync').create();
 const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const ejs = require('gulp-ejs');
+const mozjpeg = require('imagemin-mozjpeg')
+const pngquant = require('imagemin-pngquant');
+const imagemin = require('gulp-imagemin');
 
 function style() {
     return gulp.src('./public/source/scss/**/*.scss')
@@ -25,6 +28,15 @@ function ejsTemplates() {
         .pipe(gulp.dest('./views/')) //AND EXPORT THEM TO THE DIST FOLDER
 }
 
+function imageCompress() {
+    return gulp.src('./public/images/*')
+        .pipe(imagemin([
+            pngquant({quality: [0.9, 0.9]}),
+            mozjpeg({quality: 90})
+        ]))
+        .pipe(gulp.dest('./public/images/'))
+}
+
 function watch() {
     browserSync.init({
         proxy: 'http://localhost:3030',
@@ -43,4 +55,5 @@ function watch() {
 
 exports.style = style;
 exports.ejsTemplates = ejsTemplates;
+exports.imageCompress = imageCompress;
 exports.watch = watch;
