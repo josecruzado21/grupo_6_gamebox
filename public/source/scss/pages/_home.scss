@@ -1,7 +1,9 @@
+//agregando padding para separar del footer
 .home{
     padding-bottom: 50px;
 }
 
+//espacio donde irá la imagen del inicio, en la que aparecerá el boton de comprar
 .container-images-slider{
     display: block;
     margin:0;
@@ -14,6 +16,7 @@
     }
 }
 
+//imagen del inicio
 .container-images-slider img{
     width: 100%;
     height: 300px;
@@ -26,6 +29,8 @@
 
 }
 
+//formato de la caja que irá encima de la imagen. 
+//En esta estará el nombre del juego y el botón comprar.
 .titulo-juego-home{
     display: flex;
     flex-direction: column;
@@ -47,6 +52,7 @@
     }
 }
 
+//formato del texto dentro de la caja encima de la imagen en el home.
 .titulo-juego-home p{
     font-size: 20px;
     padding-right:10px;
@@ -59,6 +65,7 @@
 
 }
 
+//formato del botón de la caja de la imagen principal del inicio
 .boton-juego-home{
     width:80%;
     align-self: center;
@@ -78,6 +85,8 @@
     cursor: pointer;
 }
 
+
+//formato al contenedor que tendrá las opciones del menú de inicio
 .barra-opciones-home{
     display: flex;
     flex-direction: row;
@@ -102,6 +111,8 @@
     }
 }
 
+//formato a cada una de las opciones que compone la barra de inicio
+//estas son: Lanzamientos, Ofertas, Recomendados, Más Vendidos
 .barra-opciones-home div{
     height: 100%;
     width: 100%;
@@ -160,6 +171,8 @@
     color:$red;
 }
 
+
+
 .imagenes-consolas{
     margin:auto;
     flex-direction: column;
@@ -183,7 +196,10 @@
 
     @include respond-to('tablet'){
         width:400px;
+    }
 
+    @include respond-to('desktop'){
+        width: 350px;
     }
 }
 
@@ -198,6 +214,12 @@
         height: 300px;
 
     }
+}
+
+.imagenes-consolas .imagen-consola-1:hover,.imagen-consola-2:hover,.imagen-consola-3:hover{
+    box-shadow:0px 0px 50px rgb(100, 100, 100);
+    cursor: pointer;
+
 }
 
 .imagen-consola-1{
@@ -247,6 +269,133 @@
     cursor: pointer;
 }
 
+// Color al > rojo al costado de Explorar
 .imagenes-consolas .explorar span{
     color:$red;
+}
+
+
+//formato al texto PC Gaming
+.pc-gaming{
+    width: 70%;
+    margin:auto;
+    text-align: left;
+    font-weight: bold;
+    font-size: 28px;
+    color:$darkBlue;
+    margin-bottom: 70px;
+    
+    @include respond-to('desktop'){
+        width: 80%;
+    }
+}
+
+//formato de los cuadros de pc gaming, todos en versión mobile seran horizontales
+// en versión escritorio serán dos horizontales y uno vertical
+.secciones-pc-gaming{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 70%;
+    margin:auto;
+    height: 700px;
+    justify-content: space-between;
+
+    @include respond-to('desktop'){
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 80%;
+        height: 500px;
+    }
+
+}
+
+//formato al div que contiene cuadros de hedphones y monitores
+.headphones-monitores{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    height: 437px;
+
+    @include respond-to('desktop'){
+        width: 60%;
+        height: 90%;     
+    }
+}
+
+//tamaño de las imagenes de la seccion pc gaming
+
+.secciones-pc-gaming .headphones-monitores img{
+    width: 190px;
+    position:absolute;
+    bottom:40px;
+    left: 25px;
+
+    @include respond-to('desktop'){
+        width:250px;
+        bottom:50px;
+    }
+
+}
+
+.secciones-pc-gaming .imagen-headphones,.imagen-silla{
+    width: 190px;
+    position:absolute;
+    bottom:0px;
+    left: 20px;
+
+    @include respond-to('desktop'){
+        width:250px;
+        bottom: 30px;
+    }
+
+}
+
+//colores a los fondos de cada uno de los cuadros de la seccion pc gaming
+.secciones-pc-gaming .headphones,.monitores,.sillas-gamer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    height: 170px;
+    position: relative;
+    border-radius: 10px;
+    color: white;
+
+    @include respond-to('desktop'){
+        height: 215px;
+    }
+}
+
+.secciones-pc-gaming .headphones:hover, .monitores:hover,.sillas-gamer:hover{
+    cursor: pointer;
+    box-shadow:0px 0px 50px rgb(100, 100, 100);
+}
+
+.secciones-pc-gaming .sillas-gamer{
+    @include respond-to('desktop'){
+        height: 90%;
+        width:37%;
+    }
+}
+
+.secciones-pc-gaming p{
+    align-self: flex-end;
+    padding-right: 50px;
+    font-size: 32px;
+    font-weight: bold;
+
+}
+
+.secciones-pc-gaming .headphones{
+    background-color: #333333;
+}
+
+.secciones-pc-gaming .monitores{
+    background-color: #043C60;
+}
+
+.secciones-pc-gaming .sillas-gamer{
+    background-color: #F1A72A;
 }
