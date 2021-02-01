@@ -71,6 +71,20 @@
     top: 50%;
     transform: translateY(-50%);
     width: 24px;
+
+    
+}
+
+.icon-close {
+    background: url('../images/iconClose.svg');
+
+    height: 24px;
+
+    width: 24px;
+
+    background-color: $lightBlue;
+
+    border-color: $lightBlue;
 }
 
 // Checkbox
