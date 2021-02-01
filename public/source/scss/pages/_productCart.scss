@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
+    padding: 30px;
 }
 
 .cart-1{
@@ -282,5 +283,26 @@
         text-align: center;    
         color: $darkGrey;
 
+    }
+}
+
+
+.desktop{
+    @include respond-to('desktop') {
+       display: flex;
+       flex-direction: row;
+       width: 100%
+    }
+}
+.desktop-1{
+    @include respond-to('desktop') {
+
+       width: 70%
+    }
+}
+.desktop-2{
+    @include respond-to('desktop') {
+
+       width: 30%
     }
 }
