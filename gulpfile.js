@@ -44,7 +44,7 @@ function watch() {
         ui: false,
         ignore: 'node_modules',
         injectChanges: false,
-        browser: 'chrome'
+        browser: 'firefox developer edition'
     });
     gulp.watch('./public/source/scss/**/*.scss', style);
     gulp.watch('./views/**/*.html').on('change', browserSync.reload);
