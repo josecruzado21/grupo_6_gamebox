@@ -27,7 +27,7 @@ let productsController = {
     },
     edit: (req, res) => {
        
-        let title = 'Gamebox |Editar Producto ';
+        let title = 'Gamebox | Editar Producto ';
        
          res.render('pages/products/productEdit', {
              'title': title

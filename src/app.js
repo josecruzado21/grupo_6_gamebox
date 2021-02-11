@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path');
 const bodyParser = require("body-parser");
 const app = express();
-console.log(__dirname);
+const methodOverride = require('method-override');
 
 const publicPath = path.resolve(__dirname, '../public');
 //app.use('/static',express.static(publicPath));
@@ -18,37 +18,21 @@ app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, './views/'));
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
 
+app.use(methodOverride("_method"));
 
+app.use((req, res, next) => {
+    res.status(404).render("not-found");
+})
 
 //Routes
 const mainRouter = require('./routes/main');
 const productRouter = require('./routes/products');
 const usersRouter = require('./routes/users');
 
-// app.get('/', (req,res) => {
-//     res.render('pages/index');
-// })
 
-// app.get('/registro', (req,res) => {
-   
-//     res.render('pages/register');
-// })
-
-// app.get('/login', (req,res) => {
-  
-//     res.render('pages/login');
-// })
-
-// app.get('/carrito-de-compras', (req,res) => {
- 
-//     res.render('pages/productCart');
-// })
-
-// app.get('/detalle', (req,res) => {
-  
-//     res.render('pages/productDetail');
-// })
 
 
 app.use(mainRouter);
