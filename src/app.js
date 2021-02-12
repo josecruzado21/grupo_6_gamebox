@@ -31,10 +31,11 @@ app.use(methodOverride("_method"));
 const mainRouter = require('./routes/main');
 const productRouter = require('./routes/products');
 const usersRouter = require('./routes/users');
-
+const adminRouter = require('./routes/admin');
 
 
 
 app.use(mainRouter);
 app.use('/productos', productRouter);
 app.use('/usuarios', usersRouter);
+app.use('/admin', adminRouter)

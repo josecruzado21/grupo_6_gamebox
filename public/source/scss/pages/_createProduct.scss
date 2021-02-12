@@ -1,0 +1,65 @@
+.createProduct{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 32px;
+    width: 95%;
+    //color:$gggg;
+
+    @include respond-to('tablet') {
+        width: 80%;
+
+    }
+
+
+
+
+
+    @include respond-to('desktop') {
+        padding: 56px 5%;
+        width: 40%;
+
+
+    }
+}
+ 
+
+.small-title-createProduct {
+    @extend .h4;
+}
+
+
+
+.form-create-product{
+    
+    width: 80%;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        a.linkSmall {
+            margin-top: 12px;
+            text-align: right;
+        }
+
+        .checkboxWrapper {
+            margin: 32px 0 56px;
+        }
+    }
+
+}
+
+
+
+.btn-create-product{
+    @extend .btn-primary;
+    margin-bottom: 24px;
+
+    @include respond-to('desktop') {
+        margin-bottom: 0;
+    }
+    
+}
+
+
+

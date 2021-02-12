@@ -1,3 +1,4 @@
+
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
@@ -9,7 +10,7 @@ const pngquant = require('imagemin-pngquant');
 const imagemin = require('gulp-imagemin');
 
 function style() {
-    return gulp.src('../public/source/scss/**/*.scss')
+    return gulp.src('./public/source/scss/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'compressed'
@@ -23,7 +24,7 @@ function style() {
 }
 
 function ejsTemplates() {
-    return gulp.src('.src/views/**/*.ejs')//SHOULD GRAB ALL EJS PAGES 
+    return gulp.src('./views/**/*.ejs')//SHOULD GRAB ALL EJS PAGES 
         .pipe(ejs({}, {}, { ext: '.html' })) //ADD EXTENSION OF .HTML
         .pipe(gulp.dest('./views/')) //AND EXPORT THEM TO THE DIST FOLDER
 }
@@ -47,8 +48,8 @@ function watch() {
         browser: 'chrome'
     });
     gulp.watch('./public/source/scss/**/*.scss', style);
-    gulp.watch('./src/views/**/*.html').on('change', browserSync.reload);
-    gulp.watch('./src/views/**/*.ejs').on('change', browserSync.reload);
+    gulp.watch('./views/**/*.html').on('change', browserSync.reload);
+    gulp.watch('./views/**/*.ejs').on('change', browserSync.reload);
     gulp.watch('./public/js/**/*.js').on('change', browserSync.reload);
 }
 
