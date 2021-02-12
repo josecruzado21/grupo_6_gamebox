@@ -13,6 +13,107 @@
 
     <main>
        
+        <a href="/" target="_self" class="logoBrand">
+            <img src="images/logoColor.svg" alt="Ir a gamebox home">
+        </a>
+
+        <div class="formWrapper">
+
+            <div class="register-introWrapper">
+                <h1 class="small-title-register">
+                    Crear producto
+                </h1>
+            </div>
+
+        <div class="form-register">
+            <form action="" method="POST">
+         
+                <div class="input-wrapper">
+                    <input class="input"  type="text" name="productName"  placeholder=" " id="productName">
+                    <label for="productName" class="label">Nombre del producto</label>
+                </div>
+
+                <div class="input-wrapper">
+                    <input class="input" type="number" name="price"  placeholder=" " id="price">
+                    <label for="price" class="label">Precio</label>
+                </div>
+
+                <div class="input-wrapper">
+
+                    <label for="type">Nuevo/Usado</label>
+
+                    <select name="type" id="type">
+                      <option value="nuevo">Nuevo</option>
+                      <option value="usado">Usado</option>
+                    </select>
+
+                </div>
+
+                <div class="input-wrapper">
+
+                    <label for="type">Categoria</label>
+
+                    <select name="type" id="type">
+                      <option value="nuevo">Consolas</option>
+                      <option value="nuevo">Juegos</option>
+                      <option value="usado">Accesorios</option>
+                      <option value="usado">Computadores </option>
+                      <option value="usado">Sillas Gamer</option>
+                    </select>
+
+                </div>
+
+
+                <div class="input-wrapper">
+
+                    <label for="type">Juegos</label>
+
+                    <select name="type" id="type">
+                      <option value="nuevo">PS4</option>
+                      <option value="usado">PS5</option>
+                      <option value="usado">Xbox one</option>
+                      <option value="usado">Nintendo Switch</option>
+                      <option value="usado">Nintendo 3DS</option>
+                      <option value="usado">PS3</option>
+                    </select>
+
+                </div>
+
+
+                    <div class="input-wrapper">
+
+                        <label for="img-1">Imagen principal</label>
+
+                        <input type="file"
+                            id="img-1" name="img-1"
+                            accept="image/png, image/jpeg">
+    
+                    </div>
+
+                    <div class="input-wrapper">
+
+                        <label for="img-2">Imagen Secundaria</label>
+
+                        <input type="file"
+                            id="img-2" name="img-2"
+                            accept="image/png, image/jpeg">
+    
+                    </div>
+
+
+                    
+                <div class="input-wrapper">
+                    <input class="input" type="number" name="stock"  placeholder=" " id="stock">
+                    <label for="stock" class="label">Stock</label>
+                </div>
+
+                <button class="btn-get-in">Crear producto</button>
+
+            </form> 
+        </div>
+
+        </div>
+
     </main>
 
     <footer>
