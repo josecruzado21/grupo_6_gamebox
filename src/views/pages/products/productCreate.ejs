@@ -17,20 +17,30 @@
 
             <div class="create-product-introWrapper">
                 <h1 class="small-title-createProduct">
+                    <% if (product === null) { %>
                     Crear producto
+                    <% } else { %>
+                        Editar un producto
+                    <% } %>
                 </h1>
             </div>
 
         <div class="form-create-product">
-            <form action="" method="POST">
+       
+            <% if (product === null) { %>
+                <form action="/productos/crear" method="POST">
+                <% } else { %>        
+                <form action="/productos/editar/<%= product?.id %>?_method=PUT" method="POST">
+                <% } %>
+        
          
                 <div class="input-wrapper">
-                    <input class="input"  type="text" name="productName"  placeholder=" " id="productName">
+                    <input class="input"  type="text" name="productName"  placeholder=" " id="productName" value="<%= product?.productName %>">
                     <label for="productName" class="label">Nombre del producto</label>
                 </div>
 
                 <div class="input-wrapper">
-                    <input class="input" type="number" name="price"  placeholder=" " id="price">
+                    <input class="input" type="number" name="price"  placeholder=" " id="price" value="<%= product?.price %>">
                     <label for="price" class="label">Precio</label>
                 </div>
 
@@ -40,16 +50,18 @@
 
                     <select name="type" id="type">
                       <option value="nuevo">Nuevo</option>
-                      <option value="usado">Usado</option>
-                    </select>
+                      <option value="usado"  >Usado</option>
+                    </select> 
+
+
 
                 </div>
 
                 <div class="input-wrapper">
 
-                    <label for="type">Categoria</label>
+                    <label for="category">Categoria</label>
 
-                    <select name="type" id="type">
+                    <select name="category" id="category">
                       <option value="nuevo">Consolas</option>
                       <option value="nuevo">Juegos</option>
                       <option value="usado">Accesorios</option>
@@ -62,15 +74,40 @@
 
                 <div class="input-wrapper">
 
-                    <label for="type">Juegos</label>
+                    <label for="subcategory">Juegos</label>
 
-                    <select name="type" id="type">
-                      <option value="nuevo">PS4</option>
-                      <option value="usado">PS5</option>
-                      <option value="usado">Xbox one</option>
-                      <option value="usado">Nintendo Switch</option>
-                      <option value="usado">Nintendo 3DS</option>
-                      <option value="usado">PS3</option>
+                    <select name="subcategory" id="subcategory">
+                      <option value="PS4">PS4</option>
+                      <option value="PS5">PS5</option>
+                      <option value="Xbox one">Xbox one</option>
+                      <option value="Nintendo Switch">Nintendo Switch</option>
+                      <option value="Nintendo 3DS">Nintendo 3DS</option>
+                      <option value="PSE">PS3</option>
+                    </select>
+
+                </div>
+
+                <div class="input-wrapper">
+
+                    <label for="hasEdition">Tiene Edicion?</label>
+
+                    <select name="hasEdition" id="hasEdition">
+                      <option value="true">Si</option>
+                      <option value="false">No</option>
+                    
+                    </select>
+
+                </div>
+
+
+                <div class="input-wrapper">
+
+                    <label for="edition">Edicion</label>
+
+                    <select name="edition" id="edition">
+                      <option value="Standar">Standar</option>
+                      <option value="Digital">Digital</option>
+                      <option value="Coleccionista">Coleccionista</option>
                     </select>
 
                 </div>
@@ -99,7 +136,7 @@
 
                     
                 <div class="input-wrapper">
-                    <input class="input" type="number" name="stock"  placeholder=" " id="stock">
+                    <input class="input" type="number" name="stock" value="<%= product?.stock %>"  placeholder=" " id="stock">
                     <label for="stock" class="label">Stock</label>
                 </div>
 
