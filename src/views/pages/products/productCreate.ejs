@@ -25,93 +25,127 @@
                 </h1>
             </div>
 
-        <div class="form-create-product">
+    
        
             <% if (product === null) { %>
-                <form action="/productos/crear" method="POST">
+                <form action="/productos/crear" method="POST" enctype="multipart/form-data">
                 <% } else { %>        
-                <form action="/productos/editar/<%= product?.id %>?_method=PUT" method="POST">
+                <form action="/productos/editar/<%= product?.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <% } %>
-        
+                <div class="form-create-product">
+               
+                    <div class="input-wrapper">
+                        <input class="input"  type="text" name="productName"  placeholder=" " id="productName" value="<%= product?.productName %>">
+                        <label for="productName" class="label">Nombre del producto</label>
+                    </div>
+    
+                    <div class="input-wrapper">
+                        <input class="input" type="number" name="price"  placeholder=" " id="price" value="<%= product?.price %>">
+                        <label for="price" class="label">Precio</label>
+                    </div>
+
+                    <div class="input-wrapper">
+
+                        <label for="category">Categoría</label>
+    
+                        <select name="category" id="category">
+                          <option value="Consolas">Consolas</option>
+                          <option value="Juegos">Juegos</option>
+                          <option value="Accesorios">Accesorios</option>
+                          <option value="Computadores">Computadores </option>
+                          <option value="Sillas Gamer">Sillas Gamer</option>
+                        </select>
+    
+                    </div>
+    
+    
+                    <div class="input-wrapper">
+    
+                        <label for="subcategory">Juegos</label>
+    
+                        <select name="subcategory" id="subcategory">
+                          <option value="PS4">PS4</option>
+                          <option value="PS5">PS5</option>
+                          <option value="Xbox one">Xbox one</option>
+                          <option value="Nintendo Switch">Nintendo Switch</option>
+                          <option value="Nintendo 3DS">Nintendo 3DS</option>
+                          <option value="PSE">PS3</option>
+                        </select>
+    
+                    </div>
+
+
+                    <div class="input-wrapper">
+
+                        <label for="hasEdition">Tiene Edicion?</label>
+    
+                        <select name="hasEdition" id="hasEdition">
+                          <option value="true">Si</option>
+                          <option value="false">No</option>
+                        
+                        </select>
+    
+                    </div>
+    
+    
+                    <div class="input-wrapper">
+    
+                        <label for="edition">Edicion</label>
+    
+                        <select name="edition" id="edition">
+                          <option value="Standar">Standar</option>
+                          <option value="Digital">Digital</option>
+                          <option value="Coleccionista">Coleccionista</option>
+                        </select>
+    
+                    </div>
+    
+                    <div class="input-wrapper">
+                        <input class="input" type="number" name="stock" value="<%= product?.stock %>"  placeholder=" " id="stock">
+                        <label for="stock" class="label">Stock</label>
+                    </div>
+
+
+                  
+              
          
-                <div class="input-wrapper">
-                    <input class="input"  type="text" name="productName"  placeholder=" " id="productName" value="<%= product?.productName %>">
-                    <label for="productName" class="label">Nombre del producto</label>
-                </div>
+    
 
-                <div class="input-wrapper">
-                    <input class="input" type="number" name="price"  placeholder=" " id="price" value="<%= product?.price %>">
-                    <label for="price" class="label">Precio</label>
-                </div>
+                    <div class="input-wrapper">
+                        <input class="input"  type="text" name="title1"  placeholder=" " id="title1" value="<%= product?.title1 %>">
+                        <label for="title1" class="label">Titulo 1</label>
+                    </div>
 
-                <div class="input-wrapper">
+                    <div class="input-wrapper">
+                        <textarea class="input"  name="productDescription1"  placeholder=" " id="productDescription1">
+                            <%= product?.productDescription1 %>
+                        </textarea>
+                        <label for="productDescription1" class="label">Descripcion del producto 1</label>
+                    </div>
 
-                    <label for="type">Nuevo/Usado</label>
-
-                    <select name="type" id="type">
-                      <option value="nuevo">Nuevo</option>
-                      <option value="usado"  >Usado</option>
-                    </select> 
-
-
-
-                </div>
-
-                <div class="input-wrapper">
-
-                    <label for="category">Categoria</label>
-
-                    <select name="category" id="category">
-                      <option value="nuevo">Consolas</option>
-                      <option value="nuevo">Juegos</option>
-                      <option value="usado">Accesorios</option>
-                      <option value="usado">Computadores </option>
-                      <option value="usado">Sillas Gamer</option>
-                    </select>
-
-                </div>
+                    <div class="input-wrapper">
+                        <input class="input"  type="text" name="title2"  placeholder=" " id="title2" value="<%= product?.title2 %>">
+                        <label for="title2" class="label">Titulo 2</label>
+                    </div>
 
 
-                <div class="input-wrapper">
+                    <div class="input-wrapper">
 
-                    <label for="subcategory">Juegos</label>
+                        <textarea class="input"  name="productDescription2"  placeholder=" " id="productDescription2">
+                            <%= product?.productDescription2 %>
+                        </textarea>
+                        <label for="productDescription2" class="label">Descripcion del producto 2</label>
+                    </div>
 
-                    <select name="subcategory" id="subcategory">
-                      <option value="PS4">PS4</option>
-                      <option value="PS5">PS5</option>
-                      <option value="Xbox one">Xbox one</option>
-                      <option value="Nintendo Switch">Nintendo Switch</option>
-                      <option value="Nintendo 3DS">Nintendo 3DS</option>
-                      <option value="PSE">PS3</option>
-                    </select>
+                    <div class="input-wrapper">
 
-                </div>
-
-                <div class="input-wrapper">
-
-                    <label for="hasEdition">Tiene Edicion?</label>
-
-                    <select name="hasEdition" id="hasEdition">
-                      <option value="true">Si</option>
-                      <option value="false">No</option>
-                    
-                    </select>
-
-                </div>
-
-
-                <div class="input-wrapper">
-
-                    <label for="edition">Edicion</label>
-
-                    <select name="edition" id="edition">
-                      <option value="Standar">Standar</option>
-                      <option value="Digital">Digital</option>
-                      <option value="Coleccionista">Coleccionista</option>
-                    </select>
-
-                </div>
-
+                        <label for="type">Nuevo/Usado</label>
+    
+                        <select name="type" id="type">
+                          <option value="nuevo">Nuevo</option>
+                          <option value="usado"  >Usado</option>
+                        </select>
+                    </div>
 
                     <div class="input-wrapper">
 
@@ -133,17 +167,28 @@
     
                     </div>
 
+                  
+                    <div class="input-wrapper">
 
-                    
-                <div class="input-wrapper">
-                    <input class="input" type="number" name="stock" value="<%= product?.stock %>"  placeholder=" " id="stock">
-                    <label for="stock" class="label">Stock</label>
-                </div>
+                        <button type="submit" class="btn-create-product">Crear producto</button>
+                    </div>
+                    <div class="input-wrapper">
 
-                <button class="btn-create-product">Crear producto</button>
+                        <button type="reset" class="btn-create-product">Resetear formulario</button>
+    
+                    </div>
+        
+
+              
+
+        
+
+            </div>
+
+ 
 
             </form> 
-        </div>
+       
 
         </div>
 
