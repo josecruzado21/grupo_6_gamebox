@@ -3,6 +3,6 @@ const usersController = require('../controllers/usersController');
 const router = express.Router();
 
 
-router.get('/perfil/:id', usersController.register);
+router.get('/perfil/:id', usersController.profile);
 
 module.exports = router;
