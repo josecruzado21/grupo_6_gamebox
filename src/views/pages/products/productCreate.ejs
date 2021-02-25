@@ -78,8 +78,8 @@
                         <label for="hasEdition">Tiene Edicion?</label>
     
                         <select name="hasEdition" id="hasEdition">
-                          <option value="true" <%= product.hasEdition == 'true' ? "selected" : "" %> >Si</option>
-                          <option value="false" <%= product.hasEdition == 'false' ? "selected" : "" %>>No</option>
+                          <option value="true" <%= product?.hasEdition == 'true' ? "selected" : "" %> >Si</option>
+                          <option value="false" <%= product?.hasEdition == 'false' ? "selected" : "" %>>No</option>
                         
                         </select>
     
@@ -109,8 +109,8 @@
                         <label for="type">Nuevo/Usado</label>
     
                         <select name="type" id="type">
-                          <option <%= product.type == 'nuevo' ? "selected" : "" %> value="nuevo">Nuevo</option>
-                          <option <%= product.type == 'usado' ? "selected" : "" %> value="usado"  >Usado</option>
+                          <option <%= product?.type == 'nuevo' ? "selected" : "" %> value="nuevo">Nuevo</option>
+                          <option <%= product?.type == 'usado' ? "selected" : "" %> value="usado"  >Usado</option>
                         </select>
                     </div>
 
