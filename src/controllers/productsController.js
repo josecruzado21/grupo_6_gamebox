@@ -35,8 +35,41 @@ let productsController = {
 
         let title = 'Gamebox | Lista de Productos ';
 
+        let products = fs.readFileSync(productsPath, 'utf-8');
+        products = JSON.parse(products);
+       
+        console.log("Params: ")
+        console.log(req.params);
+
+
+         let category = req.params.category;
+        // console.log(category);
+        // console.log(products.length);
+
+
+        if(category !== null && category !== undefined ){
+           let test = products[2];
+          // console.log(test);  
+          console.log("Categoria del archivo: ");
+          console.log(test.category); 
+          console.log("Categoria de la ruta: ")
+          console.log(category);
+          console.log(test.category == category);
+
+           let productsFound =  products.filter(f => f.category == category);
+         
+           console.log("Productos encontrados :" );
+           console.log(productsFound.length);
+
+           products = productsFound;
+
+           products.sort(function(a, b){return b.id - a.id});
+       }
+
         res.render('pages/products/productList', {
-            title: title, list_productos: list_productos
+            title: title, 
+          //  list_productos: list_productos, 
+            products:products
         })
     },
 
