@@ -35,8 +35,8 @@
                 <div class="form-create-product">
                
                     <div class="input-wrapper">
-                        <input class="input"  type="text" name="productName"  placeholder=" " id="productName" value="<%= product?.productName %>">
-                        <label for="productName" class="label">Nombre del producto</label>
+                        <input class="input"  type="text" name="name"  placeholder=" " id="name" value="<%= product?.productName %>">
+                        <label for="name" class="label">Nombre del producto</label>
                     </div>
     
                     <div class="input-wrapper">
@@ -89,15 +89,8 @@
     
     
                     <div class="input-wrapper">
-    
-                        <label for="edition">Edicion</label>
-    
-                        <select name="edition" id="edition">
-                          <option value="Standar">Standar</option>
-                          <option value="Digital">Digital</option>
-                          <option value="Coleccionista">Coleccionista</option>
-                        </select>
-    
+                        <input class="input"  type="text" name="edition"  placeholder="Coleccionista, Standard, Digital " id="edition" value="<%= product?.edition %>">
+                        <label for="edition" class="label">Edicion (Digite separado por comas)</label>
                     </div>
     
                     <div class="input-wrapper">
@@ -105,37 +98,13 @@
                         <label for="stock" class="label">Stock</label>
                     </div>
 
-
-                  
-              
-         
-    
-
                     <div class="input-wrapper">
-                        <input class="input"  type="text" name="title1"  placeholder=" " id="title1" value="<%= product?.title1 %>">
-                        <label for="title1" class="label">Titulo 1</label>
-                    </div>
-
-                    <div class="input-wrapper">
-                        <textarea class="input"  name="productDescription1"  placeholder=" " id="productDescription1">
-                            <%= product?.productDescription1 %>
+                        <textarea class="input"  name="description"  placeholder=" " id="description">
+                            <%= product?.description %>
                         </textarea>
-                        <label for="productDescription1" class="label">Descripcion del producto 1</label>
+                        <label for="description" class="label">Descripcion del producto</label>
                     </div>
 
-                    <div class="input-wrapper">
-                        <input class="input"  type="text" name="title2"  placeholder=" " id="title2" value="<%= product?.title2 %>">
-                        <label for="title2" class="label">Titulo 2</label>
-                    </div>
-
-
-                    <div class="input-wrapper">
-
-                        <textarea class="input"  name="productDescription2"  placeholder=" " id="productDescription2">
-                            <%= product?.productDescription2 %>
-                        </textarea>
-                        <label for="productDescription2" class="label">Descripcion del producto 2</label>
-                    </div>
 
                     <div class="input-wrapper">
 
@@ -149,20 +118,20 @@
 
                     <div class="input-wrapper">
 
-                        <label for="img-1">Imagen principal</label>
+                        <label for="mainImage">Imagen principal</label>
 
                         <input type="file"
-                            id="img-1" name="img-1"
+                            id="mainImage" name="mainImage"
                             accept="image/png, image/jpeg">
     
                     </div>
 
                     <div class="input-wrapper">
 
-                        <label for="img-2">Imagen Secundaria</label>
+                        <label for="secondImage">Imagen Secundaria</label>
 
                         <input type="file"
-                            id="img-2" name="img-2"
+                            id="secondImage" name="secondImage"
                             accept="image/png, image/jpeg">
     
                     </div>
@@ -177,11 +146,6 @@
                         <button type="reset" class="btn-create-product">Resetear formulario</button>
     
                     </div>
-        
-
-              
-
-        
 
             </div>
 

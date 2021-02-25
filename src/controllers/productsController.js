@@ -10,12 +10,24 @@ list_productos = [{ nombre: 'Play Station 5', precio: '$2,500,000', imagen: '/im
 { nombre: 'Primus Silla Gamer: Thrónos 200S - Negro', precio: '$1,200,000', imagen: '/images/silla_gamer_tronos.jpg', descripcion: 'Las butacas de la línea Thrónos 200S han sido creadas para darte extrema comodidad y muchísimo comfort en cualquier escenario. La Thrónos 200S es perfecta para jugar muy bien por horas y también para largos periodos de trabajo o estudio. Su construcción robusta, cuerina de primera, remates de costura doble y con materiales resistentes aseguran máxima estabilidad y duración; es una muy buena inversión. ' }]
 
 const path = require('path');
+const fs = require('fs');
+
+const productsPath = path.resolve(__dirname, '../data/products.json');
+
+
 let productsController = {
     product: (req, res) => {
-        let title = 'Gamebox | Producto ';
+        let title = 'Gamebox | ';
+        let id = parseInt(req.params.id);
+
+        let products = fs.readFileSync(productsPath, 'utf-8');
+        products = JSON.parse(products);
+
+        let productFound = products.find( product => product.id === id);
 
         res.render('pages/products/productDetail', {
-            'title': title
+            title: title + productFound.name,
+            product : productFound
         })
     },
 
@@ -27,6 +39,7 @@ let productsController = {
             title: title, list_productos: list_productos
         })
     },
+
     create: (req, res) => {
 
         let title = 'Gamebox | Crear Producto ';
@@ -34,32 +47,56 @@ let productsController = {
         let product = null;
 
         res.render('pages/products/productCreate', {
-            'title': title,
-            'product': product
+            title: title,
+            product: product
         })
     },
     save: (req, res) => {
+       let files =  req.files;
+       console.log(files);
+       let mainImage = files.find(f=>f.fieldname == 'mainImage')
+       console.log(mainImage)
+       let secondImage = files.find(f=>f.fieldname == 'secondImage')
+       console.log(secondImage)
+
+
+        let products = fs.readFileSync(productsPath, 'utf-8');
+        products = JSON.parse(products);
 
         let product = null;
 
+        let editionArr = req.body.edition.split(',')
+      
         product = {
-            'productName': req.body.name,
-            'price': req.body.name,
-            'category': req.body.name,
-            'subcategory': req.body.name,
-            'type': req.body.name,
-            'hasEdition': req.body.name,
-            'edition': req.body.name,
+            'id':products.length +1,
+            'name': req.body.name,
+            'price': req.body.price,
+            'description':req.body.description,
+            'hasEdition': req.body.hasEdition,
+            'edition': editionArr,
+            'isNew':req.body.type == 'nuevo' ? true : false,
+            'category': req.body.category,
+            'subcategory': req.body.subcategory,
             'stock': req.body.stock,
-            'principalImg': req.body.principalImg,
-            'secondaryImg': req.body.secondaryImg
-
+             'mainImage': mainImage.originalname,
+             'secondImage': secondImage.originalname,
+            'rawApi':null
         }
+
+        console.log("Producto a crear: ");
+        console.log(product)
+
+        products.push(product);
+        productsFinal = JSON.stringify(products);
+        fs.writeFileSync(productsPath, productsFinal);
+        
+        
         console.log('To create: ')
         console.log(product)
+
         
-        //ToDo Update in database logic 
-        res.redirect("/")
+        //ToDo save in database logic 
+      res.redirect("/productos/"+product.category+"/"+product.id)
     },
 
     edit: (req, res) => {

@@ -1,8 +1,8 @@
 const express = require('express')
 const path = require('path');
-const bodyParser = require("body-parser");
 const app = express();
 const methodOverride = require('method-override');
+const bodyParser = require("body-parser");
 
 const publicPath = path.resolve(__dirname, '../public');
 //app.use('/static',express.static(publicPath));
@@ -31,11 +31,10 @@ app.use(methodOverride("_method"));
 const mainRouter = require('./routes/main');
 const productRouter = require('./routes/products');
 const usersRouter = require('./routes/users');
-const adminRouter = require('./routes/admin');
+
 
 
 
 app.use(mainRouter);
 app.use('/productos', productRouter);
 app.use('/usuarios', usersRouter);
-app.use('/admin', adminRouter)
