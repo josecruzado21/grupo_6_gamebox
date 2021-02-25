@@ -25,8 +25,6 @@
                 </h1>
             </div>
 
-    
-       
             <% if (product === null) { %>
                 <form action="/productos/crear" method="POST" enctype="multipart/form-data">
                 <% } else { %>        
@@ -35,7 +33,7 @@
                 <div class="form-create-product">
                
                     <div class="input-wrapper">
-                        <input class="input"  type="text" name="name"  placeholder=" " id="name" value="<%= product?.productName %>">
+                        <input class="input"  type="text" name="name"  placeholder=" " id="name" value="<%= product?.name %>">
                         <label for="name" class="label">Nombre del producto</label>
                     </div>
     
@@ -49,11 +47,11 @@
                         <label for="category">Categoría</label>
     
                         <select name="category" id="category">
-                          <option value="consolas">Consolas</option>
-                          <option value="juegos">Juegos</option>
-                          <option value="accesorios">Accesorios</option>
-                          <option value="computadores">Computadores </option>
-                          <option value="sillas-gamer">Sillas Gamer</option>
+                          <option value="consolas" <%= product.category == 'consolas' ? "selected" : "" %>>Consolas</option>
+                          <option value="juegos" <%= product.category == 'juegos' ? "selected" : "" %>>Juegos</option>
+                          <option value="accesorios" <%= product.category == 'accesorios' ? "selected" : "" %>>Accesorios</option>
+                          <option value="computadores" <%= product.category == 'computadores' ? "selected" : "" %>>Computadores </option>
+                          <option value="sillas-gamer" <%= product.category == 'sillas-gamer' ? "selected" : "" %>>Sillas Gamer</option>
                         </select>
     
                     </div>
@@ -64,12 +62,12 @@
                         <label for="subcategory">Juegos</label>
     
                         <select name="subcategory" id="subcategory">
-                          <option value="ps4">PS4</option>
-                          <option value="ps5">PS5</option>
-                          <option value="xbox-one">Xbox one</option>
-                          <option value="nintendo-switch">Nintendo Switch</option>
-                          <option value="nintendo-3ds">Nintendo 3DS</option>
-                          <option value="ps3">PS3</option>
+                          <option value="ps4" <%= product.subcategory == 'ps4' ? "selected" : "" %>>PS4</option>
+                          <option value="ps5" <%= product.subcategory == 'ps5' ? "selected" : "" %>>PS5</option>
+                          <option value="xbox-one" <%= product.subcategory == 'xbox-one' ? "selected" : "" %>>Xbox one</option>
+                          <option value="nintendo-switch" <%= product.subcategory == 'nintendo-switch' ? "selected" : "" %>>Nintendo Switch</option>
+                          <option value="nintendo-3ds" <%= product.subcategory == 'nintendo-3ds' ? "selected" : "" %>>Nintendo 3DS</option>
+                          <option value="ps3" <%= product.subcategory == 'ps3' ? "selected" : "" %>>PS3</option>
                         </select>
     
                     </div>
@@ -80,8 +78,8 @@
                         <label for="hasEdition">Tiene Edicion?</label>
     
                         <select name="hasEdition" id="hasEdition">
-                          <option value="true">Si</option>
-                          <option value="false">No</option>
+                          <option value="true" <%= product.hasEdition == 'true' ? "selected" : "" %> >Si</option>
+                          <option value="false" <%= product.hasEdition == 'false' ? "selected" : "" %>>No</option>
                         
                         </select>
     
@@ -111,8 +109,8 @@
                         <label for="type">Nuevo/Usado</label>
     
                         <select name="type" id="type">
-                          <option value="nuevo">Nuevo</option>
-                          <option value="usado"  >Usado</option>
+                          <option <%= product.type == 'nuevo' ? "selected" : "" %> value="nuevo">Nuevo</option>
+                          <option <%= product.type == 'usado' ? "selected" : "" %> value="usado"  >Usado</option>
                         </select>
                     </div>
 
@@ -138,14 +136,25 @@
 
                   
                     <div class="input-wrapper">
-
+                        <% if (product !== null) { %>
+                        <button type="submit" class="btn-create-product">Actualizar producto</button>
+                        <% } else { %>
                         <button type="submit" class="btn-create-product">Crear producto</button>
+                        <% } %>
                     </div>
                     <div class="input-wrapper">
 
                         <button type="reset" class="btn-create-product">Resetear formulario</button>
     
                     </div>
+
+                    <% if (product !== null) { %>
+                        <div class="input-wrapper">
+                        <form action="/productos/eliminar/<%= product?.id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="btn-create-product">Eliminar producto</button>
+                          </form> 
+                        </div>
+                    <% } %>
 
             </div>
 
