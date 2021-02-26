@@ -47,11 +47,11 @@
                         <label for="category">Categoría</label>
     
                         <select name="category" id="category">
-                          <option value="consolas" <%= product.category == 'consolas' ? "selected" : "" %>>Consolas</option>
-                          <option value="juegos" <%= product.category == 'juegos' ? "selected" : "" %>>Juegos</option>
-                          <option value="accesorios" <%= product.category == 'accesorios' ? "selected" : "" %>>Accesorios</option>
-                          <option value="computadores" <%= product.category == 'computadores' ? "selected" : "" %>>Computadores </option>
-                          <option value="sillas-gamer" <%= product.category == 'sillas-gamer' ? "selected" : "" %>>Sillas Gamer</option>
+                          <option value="consolas" <%= product?.category == 'consolas' ? "selected" : "" %>>Consolas</option>
+                          <option value="juegos" <%= product?.category == 'juegos' ? "selected" : "" %>>Juegos</option>
+                          <option value="accesorios" <%= product?.category == 'accesorios' ? "selected" : "" %>>Accesorios</option>
+                          <option value="computadores" <%= product?.category == 'computadores' ? "selected" : "" %>>Computadores </option>
+                          <option value="sillas-gamer" <%= product?.category == 'sillas-gamer' ? "selected" : "" %>>Sillas Gamer</option>
                         </select>
     
                     </div>
@@ -59,15 +59,15 @@
     
                     <div class="input-wrapper">
     
-                        <label for="subcategory">Subcategoria</label>
+                        <label for="subcategory">Subcategoría</label>
     
                         <select name="subcategory" id="subcategory">
-                          <option value="ps4" <%= product.subcategory == 'ps4' ? "selected" : "" %>>PS4</option>
-                          <option value="ps5" <%= product.subcategory == 'ps5' ? "selected" : "" %>>PS5</option>
-                          <option value="xbox-one" <%= product.subcategory == 'xbox-one' ? "selected" : "" %>>Xbox one</option>
-                          <option value="nintendo-switch" <%= product.subcategory == 'nintendo-switch' ? "selected" : "" %>>Nintendo Switch</option>
-                          <option value="nintendo-3ds" <%= product.subcategory == 'nintendo-3ds' ? "selected" : "" %>>Nintendo 3DS</option>
-                          <option value="ps3" <%= product.subcategory == 'ps3' ? "selected" : "" %>>PS3</option>
+                          <option value="ps4" <%= product?.subcategory == 'ps4' ? "selected" : "" %>>PS4</option>
+                          <option value="ps5" <%= product?.subcategory == 'ps5' ? "selected" : "" %>>PS5</option>
+                          <option value="xbox-one" <%= product?.subcategory == 'xbox-one' ? "selected" : "" %>>Xbox one</option>
+                          <option value="nintendo-switch" <%= product?.subcategory == 'nintendo-switch' ? "selected" : "" %>>Nintendo Switch</option>
+                          <option value="nintendo-3ds" <%= product?.subcategory == 'nintendo-3ds' ? "selected" : "" %>>Nintendo 3DS</option>
+                          <option value="ps3" <%= product?.subcategory == 'ps3' ? "selected" : "" %>>PS3</option>
                         </select>
     
                     </div>
