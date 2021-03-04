@@ -189,6 +189,15 @@
     }
 }
 
+a{
+    color:inherit;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
 .mi-cuenta{
     @include respond-to('tablet'){
         font-size: 18px;
