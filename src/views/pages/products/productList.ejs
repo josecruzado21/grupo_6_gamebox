@@ -13,13 +13,13 @@
 
     <main>
 
-        <% for(let i=0;i < list_productos.length;i++) {%>
+        <% for(let i=0;i < products.length;i++) {%>
         <div class='lista_productos'>
-            <img class='imagen_lista_productos' src=<%= list_productos[i].imagen %>>
+            <img class='imagen_lista_productos' src="/images/products/<%= products[i].secondImage %>">
             <div class="titulo_precio_descripcion">
-                <div class="nombre_lista"><%=list_productos[i].nombre%></div>
-                <div class="precio_lista"><%=list_productos[i].precio%></div>
-                <div class="descripcion_lista"><%=list_productos[i].descripcion%></div>
+                <div class="nombre_lista"><a href="/productos/<%= products[i].category %>/<%= products[i].id %>"><%=products[i].name%></a></div>
+                <div class="precio_lista"><%=products[i].price%></div>
+                <div class="descripcion_lista"><%=products[i].description%></div>
             </div>
             <button class="button-list">Agregar al carrito</button>
         </div>
