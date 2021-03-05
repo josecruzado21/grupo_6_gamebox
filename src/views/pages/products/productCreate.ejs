@@ -148,13 +148,7 @@
     
                     </div>
 
-                    <% if (product !== null) { %>
-                        <div class="input-wrapper">
-                        <form action="/productos/eliminar/<%= product?.id %>?_method=DELETE" method="POST">
-                            <button type="submit" class="btn-create-product">Eliminar producto</button>
-                          </form> 
-                        </div>
-                    <% } %>
+
 
             </div>
 
@@ -162,7 +156,13 @@
 
             </form> 
        
-
+            <% if (product !== null) { %>
+                <div class="input-wrapper">
+                <form action="/productos/eliminar/<%= product?.id %>?_method=DELETE" method="POST">
+                    <button type="submit" class="btn-create-product">Eliminar producto</button>
+                  </form> 
+                </div>
+            <% } %>
         </div>
 
     </section>
