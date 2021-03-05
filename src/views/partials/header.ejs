@@ -1,38 +1,69 @@
 <div class="header">
-    <div class="logo-icons">
-        <img class="logo-image" src="/images/logo.svg">
-        <div class="car-user">
-            <i class="fas fa-shopping-cart"></i>
-            <i class="fas fa-user"></i>
-            <div class="texto-bienvenida">
-                <p class="mi-cuenta"><b>Mi cuenta</b></p>
-                <p class="crear-cuenta">Ingresa o crea tu cuenta</p>
+    <div class="triggerMenu" id="showLeft">
+        <img src="/images/iconMenu.svg" alt="abrir menu mobile">
+        <a href="#">Categorias</a>
+    </div>
+
+    <a href="/" class="logo-image" target="_self">
+        <img src="/images/logo.svg" alt="Gambox logo - Ir al inicio">
+    </a>
+
+    <div class="userActions">
+        <a href="#" class="userCart">
+            <img src="/images/iconCart.svg" alt="Ver productos en mi carrito">
+        </a>
+
+        <a href="#" class="userAccount">
+            <img src="/images/iconUser.svg" alt="Iniciar sesión">
+            <div class="userAccountInfo">
+                <p>Mi cuenta</p>
+                <span>Ingresa o crea tu cuenta</span>
             </div>
-        </div>
+        </a>
     </div>
 
-    <div class="search-bar">
+    <form id="searchBar" action="/" method="GET" autocomplete="off">
+        <input type="text" id="searchBar" name="searchBar" placeholder="¿Qué estas buscando?">
+    </form>
 
-        <input class="searchBox" type="search" placeholder="¿Qué estás buscando?">
-        <i class="fas fa-search"></i>
-
+    <nav class="sideMenu" id="sideMenu">
+        <ul class="menu">
+            <li class="itemMenu">
+                <span>Consolas</span>
+                <img src="" alt="Ir a la sección consolas">
+            </li>
+            <li class="itemMenu">
+                <span>Videojuegos</span>
+                <img src="" alt="Ir a la sección videojuegos">
+            </li>
+            <li class="itemMenu">
+                <span>Retrogaming</span>
+                <img src="" alt="Ir a la sección Retrogaming">
+            </li>
+            <li class="itemMenu">
+                <span>Accesorios videojuegos</span>
+                <img src="" alt="Ir a la sección Accesorios videojuegos">
+            </li>
+            <li class="itemMenu">
+                <span>PC Gaming</span>
+                <img src="" alt="Ir a la sección PC Gaming">
+            </li>
+        </ul>
+    </nav>
+    <div class="mainCategories">
+        <ul>
+            <li class="mainCategoriesItem">
+                <a href="#">PlayStation</a>
+            </li>
+            <li class="mainCategoriesItem">
+                <a href="#">XBOX</a>
+            </li>
+            <li class="mainCategoriesItem">
+                <a href="#">Nintendo Switch</a>
+            </li>
+            <li class="mainCategoriesItem">
+                <a href="#">Computadores</a>
+            </li>
+        </ul>
     </div>
-
-    <div class="burger-menu">
-        <i class="fas fa-bars"></i>
-    </div>
-
-    <div class="menu-options">
-        <div class="category">
-            <div class="burger-menu-category">
-                <i class="fas fa-bars"></i>
-                <p>Categorías</p>
-            </div>
-        </div>
-        <p>Play Station</p>
-        <p>XBOX</p>
-        <P>Nintendo Switch</p>
-        <p>Computadoras</p>
-    </div>
-
 </div>
