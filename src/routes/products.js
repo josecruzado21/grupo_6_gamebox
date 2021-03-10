@@ -22,10 +22,7 @@ router.get('/:category', productsController.list)
 router.get('/:category/:id', productsController.product);
 
 
-// router.get('/:category/:id/editar', productsController.edit);
-
-//router.get('/crear', productsController.create);
-//router.post('/crear' ,upload.any(),productsController.create);
+router.post('/crear' ,upload.any(),productsController.save);
 router.put('/editar/:id',  upload.any(),productsController.update);
 router.delete('/eliminar/:id',productsController.delete);
 
