@@ -10,6 +10,15 @@ const usersController = {
          })
 
     },
+
+    loginProcess:(req, res) => {
+        let 
+
+
+        return res.send(req.body);
+    },
+
+
     register: (req, res) => {
       
                
