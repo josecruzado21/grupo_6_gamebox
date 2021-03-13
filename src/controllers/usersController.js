@@ -10,8 +10,6 @@ const titleLogin = 'Gamebox | Login '
 const usersController = {
     login: (req, res) => {
        
-       
-     
          res.render('pages/users/login', {
              'title': titleLogin
          })
@@ -56,6 +54,11 @@ const usersController = {
         } );
     },
 
+
+    logout: (req, res) => {
+        req.session.destroy();
+        return res.redirect('/');
+    },
 
     register: (req, res) => {
       

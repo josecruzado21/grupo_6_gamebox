@@ -4,11 +4,12 @@ const path = require('path');
 const app = express();
 const methodOverride = require('method-override');
 const bodyParser = require("body-parser");
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 const publicPath = path.resolve(__dirname, '../public');
 //app.use('/static',express.static(publicPath));
 app.use(express.static(publicPath));
-
+app.use(userLoggedMiddleware);
 
 app.listen(3030, ()=>{
     console.log("servidor corriendo");
