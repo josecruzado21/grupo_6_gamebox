@@ -16,7 +16,10 @@ const usersController = {
 
     },
 
+
     loginProcess:(req, res) => {
+        //return res.send(req.body)
+
         let user = User.findByProperty('email', req.body.email);
      
         if(user){
@@ -25,6 +28,11 @@ const usersController = {
             if(checkPass){
                 delete user.password;
                 req.session.userLogged = user;
+
+                if(req.body.sesion){
+                    res.cookie('userEmail', req.body.email, {maxAge: (1000*60) * 30})
+                }
+
                 return res.redirect('/usuarios/perfil');
                 // return res.render('pages/users/profile', {
                 //     title: 'Perfil usuario',
@@ -57,6 +65,9 @@ const usersController = {
 
     logout: (req, res) => {
         req.session.destroy();
+
+        res.clearCookie('userEmail');
+
         return res.redirect('/');
     },
 
