@@ -29,8 +29,10 @@ app.use(session({
     saveUninitialized:false
 }));
 
-app.use(userLoggedMiddleware);
+
 app.use(cookieParser());
+
+app.use(userLoggedMiddleware);
 
 app.use(methodOverride("_method"));
 
