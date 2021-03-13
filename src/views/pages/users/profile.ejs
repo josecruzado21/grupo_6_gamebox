@@ -10,7 +10,12 @@
     <header>
         <%- include('../../partials/header.ejs') %>
     </header>
-    Landing para perfil de usuario
+    <section>
+        <p>
+            Hola! <%= user.name %> 
+        </p>
+        <img src="/images/avatars/<%= user.avatar %>" alt="">
+    </section>
     <footer>
         <%- include('../../partials/footer.ejs') %>
     </footer>

@@ -1,21 +1,59 @@
   
 const path = require('path');
+const bcryptjs = require('bcryptjs');
+
+//Requiero el modelo
+const User = require('../models/User');
+
+const titleLogin = 'Gamebox | Login '
+
 const usersController = {
     login: (req, res) => {
        
-        let title = 'Gamebox | Login ';
+       
      
          res.render('pages/users/login', {
-             'title': title
+             'title': titleLogin
          })
 
     },
 
     loginProcess:(req, res) => {
-        let 
+        let user = User.findByProperty('email', req.body.email);
+     
+        if(user){
+
+            let checkPass = bcryptjs.compareSync(req.body.password, user.password);
+            if(checkPass){
+                delete user.password;
+                req.session.userLogged = user;
+                return res.redirect('/usuarios/perfil');
+                // return res.render('pages/users/profile', {
+                //     title: 'Perfil usuario',
+                //     user: user
+                // } );
+            }else{
+                return res.render('pages/users/login', {
+                    title: titleLogin,
+                    errors: {
+                        email:{
+                            msg:'Las credenciales son inválidas'
+                        }
+                    }
+                } );
+            }  
+        }
 
 
-        return res.send(req.body);
+
+        return res.render('pages/users/login', {
+            title: titleLogin,
+            errors: {
+                email:{
+                    msg:'No se encuentra este email en la base de datos'
+                }
+            }
+        } );
     },
 
 
@@ -32,9 +70,14 @@ const usersController = {
       
         let title = 'Gamebox | Perfil ';
      
-        res.render('pages/users/profile', {
-            'title': title
-        })
+        if(req.session.userLogged){
+            res.render('pages/users/profile', {
+                'title': title,
+                user:req.session.userLogged
+            })
+        }else{
+            res.redirect('/')
+        }
     }
 };
 

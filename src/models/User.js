@@ -82,4 +82,6 @@ const User = {
 }
 
 
+module.exports = User;
+
 //console.log(User.findByProperty('email','ldavydychevf@walmart.com'))

@@ -1,4 +1,5 @@
 const express = require('express')
+const session = require('express-session')
 const path = require('path');
 const app = express();
 const methodOverride = require('method-override');
@@ -20,7 +21,11 @@ app.set('views', path.resolve(__dirname, './views/'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
-
+app.use(session({
+    secret:"Secret",
+    resave:false,
+    saveUninitialized:false
+}));
 app.use(methodOverride("_method"));
 
 // app.use((req, res, next) => {

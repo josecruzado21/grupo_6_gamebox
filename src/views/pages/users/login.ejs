@@ -22,6 +22,11 @@
                     <p class="welcome-login">
                         ¡Bienvenido de nuevo! Ingresa con tu correo electrónico y contraseña
                     </p>
+                    <% if (locals.errors && errors.email) { %>
+                     <p>
+                         <%= errors.email.msg  %> 
+                     </p>
+                    <% } %>
                 </div>
 
                 <div class="form-login">
