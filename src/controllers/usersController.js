@@ -1,4 +1,4 @@
-  
+
 const path = require('path');
 const bcryptjs = require('bcryptjs');
 
@@ -9,45 +9,36 @@ const titleLogin = 'Gamebox | Login '
 
 const usersController = {
     login: (req, res) => {
-       
-         res.render('pages/users/login', {
-             'title': titleLogin
-         })
-
+        res.render('pages/users/login', {
+            'title': titleLogin
+        })
     },
 
 
-    loginProcess:(req, res) => {
-        //return res.send(req.body)
-
+    loginProcess: (req, res) => {
         let user = User.findByProperty('email', req.body.email);
-     
-        if(user){
-
+        if (user) {
             let checkPass = bcryptjs.compareSync(req.body.password, user.password);
-            if(checkPass){
+            if (checkPass) {
                 delete user.password;
                 req.session.userLogged = user;
 
-                if(req.body.sesion){
-                    res.cookie('userEmail', req.body.email, {maxAge: (1000*60) * 30})
+                if (req.body.sesion) {
+                    res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 30 })
                 }
 
                 return res.redirect('/usuarios/perfil');
-                // return res.render('pages/users/profile', {
-                //     title: 'Perfil usuario',
-                //     user: user
-                // } );
-            }else{
+                
+            } else {
                 return res.render('pages/users/login', {
                     title: titleLogin,
                     errors: {
-                        email:{
-                            msg:'Las credenciales son inválidas'
+                        email: {
+                            msg: 'Las credenciales son inválidas'
                         }
                     }
-                } );
-            }  
+                });
+            }
         }
 
 
@@ -55,11 +46,11 @@ const usersController = {
         return res.render('pages/users/login', {
             title: titleLogin,
             errors: {
-                email:{
-                    msg:'No se encuentra este email en la base de datos'
+                email: {
+                    msg: 'No se encuentra este email en la base de datos'
                 }
             }
-        } );
+        });
     },
 
 
@@ -72,24 +63,24 @@ const usersController = {
     },
 
     register: (req, res) => {
-      
-               
+
+
         let title = 'Gamebox | Registro ';
-     
-         res.render('pages/users/register', {
-             'title': title
-         })
+
+        res.render('pages/users/register', {
+            'title': title
+        })
     },
     profile: (req, res) => {
-      
+
         let title = 'Gamebox | Perfil ';
-     
-        if(req.session.userLogged){
+
+        if (req.session.userLogged) {
             res.render('pages/users/profile', {
                 'title': title,
-                user:req.session.userLogged
+                user: req.session.userLogged
             })
-        }else{
+        } else {
             res.redirect('/')
         }
     }

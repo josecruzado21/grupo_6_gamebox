@@ -4,34 +4,34 @@ const path = require('path');
 const dataPath = path.resolve(__dirname, '../data/');
 console.log(dataPath);
 const User = {
-    fileName: dataPath+'/users.json',
-    
-    getData:function(){
-      return JSON.parse( fs.readFileSync(this.fileName, 'utf-8'));
+    fileName: dataPath + '/users.json',
+
+    getData: function () {
+        return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
     },
-    generateId:function(){
+    generateId: function () {
         let users = this.findAll();
         let lastUser = users.pop();
 
-        if(lastUser){
-            return lastUser.id +1;
-        } else{
+        if (lastUser) {
+            return lastUser.id + 1;
+        } else {
             return 1;
-        }  
-      },
+        }
+    },
 
-    findAll:function(){
+    findAll: function () {
         return this.getData();
-    }, 
-    findById:function(id){
+    },
+    findById: function (id) {
         let users = this.findAll();
-        return users.find(f=>f.id === id);
-    }, 
-    findByProperty:function(prop, text){
+        return users.find(f => f.id === id);
+    },
+    findByProperty: function (prop, text) {
         let users = this.findAll();
-        return users.find(f=>f[prop] === text);
-    }, 
-    create:function(user){
+        return users.find(f => f[prop] === text);
+    },
+    create: function (user) {
         let users = this.findAll();
 
         user.id = this.generateId();
@@ -40,17 +40,17 @@ const User = {
 
         usersFinal = JSON.stringify(users, null, ' ');
         fs.writeFileSync(this.fileName, usersFinal);
-    }, 
-    edit:function(user){
+    },
+    edit: function (user) {
 
         let users = this.findAll();
         let id = parseInt(user.id);
 
         //Obtengo el indice del usuario en la lista
-        const i = users.map( p => p.id ).indexOf(id);
+        const i = users.map(p => p.id).indexOf(id);
 
         //Lo saco de la lista
-        if ( i > -1 ) {
+        if (i > -1) {
             users.splice(i, 1);
         }
 
@@ -59,24 +59,24 @@ const User = {
 
         usersFinal = JSON.stringify(users, null, ' ');
         fs.writeFileSync(this.fileName, usersFinal);
-    }, 
-    delete:function(user){
+    },
+    delete: function (user) {
         let users = this.findAll();
-      
+
         let id = parseInt(user.id);
 
         //Obtengo el indice del usuario en la lista
-        const i = users.map( p => p.id ).indexOf(id);
+        const i = users.map(p => p.id).indexOf(id);
 
         //Lo saco de la lista
-        if ( i > -1 ) {
+        if (i > -1) {
             users.splice(i, 1);
         }
 
         usersFinal = JSON.stringify(users, null, ' ');
         fs.writeFileSync(this.fileName, usersFinal);
 
-    }, 
+    },
 
 
 }
